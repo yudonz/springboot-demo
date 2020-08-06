@@ -10,8 +10,9 @@ import java.time.format.DateTimeFormatter;
  */
 public class LocalDateTimeTest {
     public static void main(String[] args) {
-        LocalDate date = LocalDate.now();
-        String s3 = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-        System.out.println(s3);
+        LocalDate date1 = LocalDate.now();
+        System.out.println("data1 = " + date1);
+        String s3 = date1.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        System.out.println("s3 = " + s3);
     }
 }
