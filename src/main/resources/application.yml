@@ -23,7 +23,7 @@ logging:
       resultset: OFF
       connection: OFF
       resultsettable: OFF
-      
+
 pagehelper:
   auto-dialect: true
   reasonable: true
