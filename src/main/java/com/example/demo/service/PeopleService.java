@@ -5,6 +5,7 @@ import com.example.demo.mapper.PeopleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -17,7 +18,7 @@ public class PeopleService {
     @Autowired
     private PeopleMapper peopleMapper;
 
-    public List<People> findAll() {
+    public List<People> findAll()  {
         List<People> allPeople = peopleMapper.findAllPeople();
         return allPeople;
     }
