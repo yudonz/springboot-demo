@@ -5,7 +5,6 @@ import com.example.demo.mapper.PeopleMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.util.List;
 
 /**
@@ -29,7 +28,7 @@ public class PeopleService {
     }
 
     public int insert(People record) {
-        return peopleMapper.insert(record);
+        return peopleMapper.insertSelective(record);
     }
 
     public int updateBatch(List<People> list) {
@@ -38,6 +37,10 @@ public class PeopleService {
 
     public int batchInsert(List<People> list) {
         return peopleMapper.batchInsert(list);
+    }
+
+    public void save(People people) {
+        peopleMapper.updateByPrimaryKeySelective(people);
     }
 }
 

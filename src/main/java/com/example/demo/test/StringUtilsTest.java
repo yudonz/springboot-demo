@@ -12,6 +12,8 @@ public class StringUtilsTest {
     public static void main(String[] args) {
         isEmpty();
         isBlank();
+        isNumeric();
+        isNumericSpace();
     }
 
     //return str == null || str.length() == 0;
@@ -26,6 +28,20 @@ public class StringUtilsTest {
         String str = null;
         boolean isBlank = StringUtils.isBlank(str);
         System.out.println(isBlank);
+    }
+
+    //if only contains digits, and is non-null
+    public static void isNumeric() {
+        String str = "";
+        boolean isNumeric = StringUtils.isNumeric(str);
+        System.out.println(isNumeric);
+    }
+
+    //if only contains digits or space, and is non-null
+    public static void isNumericSpace() {
+        String str = "1 2";
+        boolean isNumeric = StringUtils.isNumericSpace(str);
+        System.out.println(isNumeric);
     }
 
 
