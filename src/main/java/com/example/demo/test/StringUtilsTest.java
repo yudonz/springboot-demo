@@ -23,7 +23,7 @@ public class StringUtilsTest {
         System.out.println(isEmpty);
     }
 
-    //null || length() == 0 || 空白字符
+    //if the String is null, empty or whitespace
     public static void isBlank() {
         String str = null;
         boolean isBlank = StringUtils.isBlank(str);

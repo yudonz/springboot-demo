@@ -32,12 +32,20 @@ class PeopleMapperTest {
     void fun1(){
         List<People> people = peopleMapper.findAllPeople();
         people.forEach(System.out::println);
+        System.out.println("---------------");
+        People test = peopleMapper.test(1);
+        System.out.println(test);
     }
 
     @Test
-    void fun2(){
+    void fun2() {
         People people = peopleMapper.selectByPrimaryKey(1);
         System.out.println(people);
     }
 
+    @Test
+    void test() {
+        People test = peopleMapper.test(1);
+        System.out.println(test);
+    }
 }
