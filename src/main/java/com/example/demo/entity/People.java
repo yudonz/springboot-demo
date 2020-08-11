@@ -1,12 +1,15 @@
 package com.example.demo.entity;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
-import java.util.Date;
-import javax.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
+import java.time.LocalDateTime;
 
 /**
  * @Author ZHAO Yudong
@@ -30,4 +33,8 @@ public class People implements Serializable {
     private LocalDateTime createTime;
 
     private static final long serialVersionUID = 1L;
+
+    public People(String name) {
+        this.name = name;
+    }
 }

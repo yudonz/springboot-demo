@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -33,7 +35,7 @@ class PeopleMapperTest {
         List<People> people = peopleMapper.findAllPeople();
         people.forEach(System.out::println);
         System.out.println("---------------");
-        People test = peopleMapper.test(1);
+        People test = peopleMapper.findById(1);
         System.out.println(test);
     }
 
@@ -45,7 +47,24 @@ class PeopleMapperTest {
 
     @Test
     void test() {
-        People test = peopleMapper.test(1);
+        People test = peopleMapper.findById(1);
         System.out.println(test);
+    }
+
+    @Test
+    void test2() {
+        List<Integer> ids = Arrays.asList(1, 2, 3, 4, 5);
+        System.out.println(ids);
+        List<People> byIds = peopleMapper.findByIds("1,2,3");
+        System.out.println(byIds);
+    }
+
+    @Test
+    void test3() {
+        List<People> list = new ArrayList<>();
+        list.add(new People("赵云1"));
+        list.add(new People("赵云2"));
+        int insert = peopleMapper.insert2(list);
+        System.out.println(insert);
     }
 }
