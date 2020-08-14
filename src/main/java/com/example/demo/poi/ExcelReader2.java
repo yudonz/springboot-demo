@@ -205,7 +205,6 @@ public class ExcelReader2 {
 
             // 第九列申请补贴金额
             cell = row.getCell(8);
-
             String I = convertCellValueToString(cell);
             if (!I.equals("-")) {
                 resultData.setApply(Double.valueOf(I));
@@ -267,12 +266,12 @@ public class ExcelReader2 {
             resultData.setIsFarm(Q);
 
             // 第十八列 仓储产品
-            cell = row.getCell(17);
+            cell = row.getCell(18);
             String R = convertCellValueToString(cell);
             resultData.setProducts(R);
 
             // 第十九列 创建时间
-            cell = row.getCell(18);
+            cell = row.getCell(17);
             if (cell.getCellType().equals(CellType.STRING)) {
                 String S = cell.getStringCellValue();
                 if (!StringUtils.isBlank(S)) {
