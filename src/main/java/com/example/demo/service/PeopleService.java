@@ -18,30 +18,22 @@ public class PeopleService {
     private PeopleMapper peopleMapper;
 
     public List<People> findAll()  {
-        List<People> allPeople = peopleMapper.findAllPeople();
-        return allPeople;
+        return peopleMapper.findAllPeople();
     }
 
     public People selectByPrimaryKey(Integer id) {
-        People people = peopleMapper.selectByPrimaryKey(id);
-        return people;
+        return peopleMapper.selectByPrimaryKey(id);
     }
 
     public int insert(People record) {
         return peopleMapper.insertSelective(record);
     }
 
-    public int updateBatch(List<People> list) {
-        return peopleMapper.updateBatch(list);
-    }
-
-    public int batchInsert(List<People> list) {
-        return peopleMapper.batchInsert(list);
-    }
-
     public void save(People people) {
         peopleMapper.updateByPrimaryKeySelective(people);
     }
+
+
 }
 
 

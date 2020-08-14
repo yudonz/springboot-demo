@@ -8,7 +8,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,32 +30,21 @@ class PeopleMapperTest {
     }
 
     @Test
-    void fun1(){
+    void findAllPeople() {
         List<People> people = peopleMapper.findAllPeople();
         people.forEach(System.out::println);
-        System.out.println("---------------");
-        People test = peopleMapper.findById(1);
-        System.out.println(test);
     }
 
     @Test
-    void fun2() {
+    void selectByPrimaryKey() {
         People people = peopleMapper.selectByPrimaryKey(1);
         System.out.println(people);
     }
 
     @Test
-    void test() {
+    void findById() {
         People test = peopleMapper.findById(1);
         System.out.println(test);
-    }
-
-    @Test
-    void test2() {
-        List<Integer> ids = Arrays.asList(1, 2, 3, 4, 5);
-        System.out.println(ids);
-        List<People> byIds = peopleMapper.findByIds("1,2,3");
-        System.out.println(byIds);
     }
 
     @Test
