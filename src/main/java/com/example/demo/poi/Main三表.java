@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
  * @description：
  */
 public class Main三表 {
-    private static final String inputPath1 = "D:/project/申报.xls";
-    private static final String inputPath2 = "D:/project/0814-3.xlsx";
+    private static final String inputPath1 = "D:/project/申报 (2).xls";
+    private static final String inputPath2 = "D:/project/0817_新农直报.xlsx";
     private static final String outputPath = "C:\\Users\\Administrator\\Desktop\\有差异的.xlsx";
-    private static final String outputPath1 = "C:\\Users\\Administrator\\Desktop\\对面有的.xlsx";
-    private static final String outputPath2 = "C:\\Users\\Administrator\\Desktop\\我们有的.xlsx";
+    private static final String outputPath1 = "C:\\Users\\Administrator\\Desktop\\产地市场独有.xlsx";
+    private static final String outputPath2 = "C:\\Users\\Administrator\\Desktop\\新农直报独有.xlsx";
 
     public static void main(String[] args) {
         List<ExcelData> readResult1 = ExcelReader.readExcel(inputPath1);
