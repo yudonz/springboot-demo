@@ -33,4 +33,5 @@ public class ExcelData {
     private String products;
     private LocalDateTime create;
     private LocalDateTime update;
+    private String status2;
 }

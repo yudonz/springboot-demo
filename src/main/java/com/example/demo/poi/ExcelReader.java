@@ -286,6 +286,14 @@ public class ExcelReader {
                 resultData.setUpdate(LocalDateTime.parse(T, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss")));
             }
 
+            // 第二十一列 审核时间
+            cell = row.getCell(20);
+            String U = convertCellValueToString(cell);
+            if (!StringUtils.isBlank(U)) {
+                resultData.setStatus2(U);
+            }
+
+
         } catch (Exception e) {
             e.printStackTrace();
         }

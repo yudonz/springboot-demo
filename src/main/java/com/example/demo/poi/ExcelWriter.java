@@ -46,6 +46,7 @@ public class ExcelWriter {
         CELL_HEADS.add("仓储产品");
         CELL_HEADS.add("项目创建时间");
         CELL_HEADS.add("项目审核时间");
+        CELL_HEADS.add("主体认证状态");
     }
 
     /**
@@ -264,7 +265,9 @@ public class ExcelWriter {
         // 第二十列 更新时间
         cell = row.createCell(19);
         cell.setCellValue(null == data.getUpdate() ? "" : data.getUpdate().toString());
-
+        // 第二十一列
+        cell = row.createCell(20);
+        cell.setCellValue(null == data.getStatus2() ? "" : data.getStatus2().toString());
 
     }
 

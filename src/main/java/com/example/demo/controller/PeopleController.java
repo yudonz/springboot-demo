@@ -1,8 +1,10 @@
 package com.example.demo.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.example.demo.entity.People;
 import com.example.demo.service.PeopleService;
 import com.github.pagehelper.PageInfo;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -13,6 +15,7 @@ import java.util.List;
  * @Date 2020/8/4 16:42
  * @description：
  */
+@Slf4j
 @RestController
 public class PeopleController {
     @Autowired
@@ -21,6 +24,7 @@ public class PeopleController {
     @GetMapping("/hi/{id}")
     public People hello(@PathVariable("id") Integer id) {
         People people = peopleService.selectByPrimaryKey(id);
+        log.info("查询结果：people:{}", JSON.toJSONString(people));
         return people;
     }
 

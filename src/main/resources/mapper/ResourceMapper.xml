@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.demo.easyexcel.ResourceMapper">
+
+
+
+    <resultMap id="findAllMap" type="com.example.demo.easyexcel.Resource">
+        <result column="aid" jdbcType="INTEGER" property="aid"/>
+        <result column="bid" jdbcType="INTEGER" property="bid"/>
+        <result column="cid" jdbcType="INTEGER" property="cid"/>
+        <result column="aName" jdbcType="VARCHAR" property="aName"/>
+        <result column="bName" jdbcType="VARCHAR" property="bName"/>
+        <result column="cName" jdbcType="VARCHAR" property="cName"/>
+        <result column="at" jdbcType="VARCHAR" property="aResourceType"/>
+        <result column="bt" jdbcType="VARCHAR" property="bResourceType"/>
+        <result column="ct" jdbcType="VARCHAR" property="cResourceType"/>
+     </resultMap>
+    <select id="findAll" resultMap="findAllMap">
+        select a.id "aid",a.name "aName",a.resource_type "at",
+               b.id "bid",b.name "bName",b.resource_type "bt",
+               c.id "cid",c.name "cName",c.resource_type "ct"
+        from adm_resource a
+                 left join  adm_resource b on b.parent_id = a.id
+                 left join  adm_resource c on c.parent_id = b.id
+        where a.parent_id is null
+        order by a.id,b.id,c.id
+    </select>
+</mapper>

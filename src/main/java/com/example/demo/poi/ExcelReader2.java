@@ -265,13 +265,8 @@ public class ExcelReader2 {
             String Q = convertCellValueToString(cell);
             resultData.setIsFarm(Q);
 
-            // 第十八列 仓储产品
-            cell = row.getCell(18);
-            String R = convertCellValueToString(cell);
-            resultData.setProducts(R);
-
-            // 第十九列 创建时间
-            cell = row.getCell(17);
+            // 第十八列 创建时间
+            cell = row.getCell(17);//R
             if (cell.getCellType().equals(CellType.STRING)) {
                 String S = cell.getStringCellValue();
                 if (!StringUtils.isBlank(S)) {
@@ -281,6 +276,18 @@ public class ExcelReader2 {
                 LocalDateTime localDateTimeCellValue = cell.getLocalDateTimeCellValue();
                 resultData.setCreate(localDateTimeCellValue);
             }
+
+            // 第十九列 主体认证
+            cell = row.getCell(18);//S
+            String T = convertCellValueToString(cell);
+            if (!StringUtils.isBlank(T)) {
+                resultData.setStatus2(T);
+            }
+
+            // 第二十列 仓储产品
+            cell = row.getCell(19);//19T
+            String R = convertCellValueToString(cell);
+            resultData.setProducts(R);
 
 
         } catch (Exception e) {

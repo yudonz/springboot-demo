@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://47.97.62.150:3306/xnzb_admin?characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&rewriteBatchedStatements=true&allowMultiQueries=true&serverTimezone=Asia/Shanghai
+    username: bedrock
+    password: $ZQCnnk364evTp6J*L@hGhnBE3Sybl2En
