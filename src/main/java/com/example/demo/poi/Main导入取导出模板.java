@@ -10,8 +10,8 @@ import java.util.logging.Logger;
  * @Date 2020/8/13 13:54
  * @description：程序入口
  */
-public class Main导入取导出 {
-    private static Logger logger = Logger.getLogger(Main导入取导出.class.getName());
+public class Main导入取导出模板 {
+    private static Logger logger = Logger.getLogger(Main导入取导出模板.class.getName());
 
     private static final String inputPath = "D:/project/市场司/市场司/材料初审.xls";
     private static final String outputPath = "C:\\Users\\Administrator\\Desktop\\不同之处22.xls";

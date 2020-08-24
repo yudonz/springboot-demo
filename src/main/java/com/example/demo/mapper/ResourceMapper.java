@@ -1,5 +1,6 @@
-package com.example.demo.easyexcel;
+package com.example.demo.mapper;
 
+import com.example.demo.easyexcel.Resource;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;

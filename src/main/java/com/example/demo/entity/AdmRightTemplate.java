@@ -25,39 +25,27 @@ public class AdmRightTemplate implements Serializable {
     @Column(name = "id")
     @ApiModelProperty(value = "")
     private Integer id;
-    /**
-     * 部门id
-     */
+
     @Column(name = "department_id")
     @ApiModelProperty(value = "部门id")
     private Integer departmentId;
-    /**
-     * 部门名称
-     */
+
     @Column(name = "department_name")
     @ApiModelProperty(value = "部门名称")
     private String departmentName;
-    /**
-     * 0-部-1-省
-     */
+
     @Column(name = "`level`")
     @ApiModelProperty(value = "0-部-1-省")
     private Byte level;
-    /**
-     * 资源id
-     */
+
     @Column(name = "resource_id")
     @ApiModelProperty(value = "资源id")
     private Integer resourceId;
-    /**
-     * 资源名称
-     */
+
     @Column(name = "resource_name")
     @ApiModelProperty(value = "资源名称")
     private String resourceName;
-    /**
-     * 创建时间
-     */
+
     @Column(name = "create_time")
     @ApiModelProperty(value = "创建时间")
     private Date createTime;

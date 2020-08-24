@@ -19,6 +19,15 @@ public class Main导出测试 {
         //writeSome();
     }
 
+    private static void write() {
+        String fileName = "C:\\Users\\Administrator\\Desktop\\菜单权限.xls";
+        List<Resource> list = getList();
+
+        // 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
+        EasyExcel.write(fileName, Resource.class).sheet("模板").doWrite(list);
+    }
+
+    //部分导入导出
     private static void writeSome() {
         String fileName = "C:\\Users\\Administrator\\Desktop\\菜单权限.xls";
         List<Resource> list = getList();
@@ -39,13 +48,6 @@ public class Main导出测试 {
         EasyExcel.write(fileName, Resource.class).sheet("模板").doWrite(list);
     }
 
-    private static void write() {
-        String fileName = "C:\\Users\\Administrator\\Desktop\\菜单权限.xls";
-        List<Resource> list = getList();
-
-        // 这里 需要指定写用哪个class去写，然后写到第一个sheet，名字为模板 然后文件流会自动关闭
-        EasyExcel.write(fileName, Resource.class).sheet("模板").doWrite(list);
-    }
 
     private static List<Resource> getList() {
         List<Resource> list = new ArrayList<>();

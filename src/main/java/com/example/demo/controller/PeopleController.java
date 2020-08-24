@@ -4,6 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.example.demo.entity.People;
 import com.example.demo.service.PeopleService;
 import com.github.pagehelper.PageInfo;
+import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -17,6 +18,7 @@ import java.util.List;
  */
 @Slf4j
 @RestController
+@Api(description = "人员测试接口")
 public class PeopleController {
     @Autowired
     private PeopleService peopleService;
