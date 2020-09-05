@@ -159,7 +159,9 @@ public class ExcelReader {
             cell = row.getCell(0);
             String A = convertCellValueToString(cell);
             if (!StringUtils.isBlank(A)) {
-                resultData.setId(Integer.valueOf(A));
+                if (!A.equals("-")) {
+                    resultData.setId(Integer.valueOf(A));
+                }
             }
 
             // 第二列状态
