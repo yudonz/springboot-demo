@@ -2,9 +2,11 @@ package com.example.demo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
 import tk.mybatis.spring.annotation.MapperScan;
 
+/**
+ * https://github.com/yudonz/springboot-demo
+ */
 @SpringBootApplication
 @MapperScan(basePackages = "com.example.demo.mapper")
 public class DemoApplication {

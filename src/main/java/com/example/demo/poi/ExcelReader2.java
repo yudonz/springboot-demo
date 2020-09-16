@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 /**
  * @Author ZHAO Yudong
  * @Date 2020/8/13 13:55
- * @description：读取Excel内容
+ * @description：读取新农直报的内容
  */
 public class ExcelReader2 {
     private static Logger logger = Logger.getLogger(ExcelReader2.class.getName()); // 日志打印类
@@ -288,6 +288,18 @@ public class ExcelReader2 {
             cell = row.getCell(19);//19T
             String R = convertCellValueToString(cell);
             resultData.setProducts(R);
+
+            // 第二十一列 审核时间
+            cell = row.getCell(20);//20U
+            if (cell.getCellType().equals(CellType.STRING)) {
+                String U = cell.getStringCellValue();
+                if (!StringUtils.isBlank(U)) {
+                    resultData.setUpdate(LocalDateTime.parse(U, DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss")));
+                }
+            } else if (cell.getCellType().equals(CellType.NUMERIC)) {
+                LocalDateTime localDateTimeCellValue = cell.getLocalDateTimeCellValue();
+                resultData.setUpdate(localDateTimeCellValue);
+            }
 
 
         } catch (Exception e) {
