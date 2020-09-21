@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 /**
  * @Author ZHAO Yudong
  * @Date 2020/8/13 13:55
- * @description：读取Excel内容
+ * @description：读取市场司的内容
  */
 public class ExcelReader {
     private static Logger logger = Logger.getLogger(ExcelReader.class.getName()); // 日志打印类

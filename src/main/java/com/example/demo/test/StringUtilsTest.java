@@ -3,6 +3,9 @@ package com.example.demo.test;
 
 import org.apache.commons.lang.StringUtils;
 
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 /**
  * @Author ZHAO Yudong
  * @Date 2020/8/6 15:16
@@ -10,10 +13,29 @@ import org.apache.commons.lang.StringUtils;
  */
 public class StringUtilsTest {
     public static void main(String[] args) {
-        isEmpty();
-        isBlank();
-        isNumeric();
-        isNumericSpace();
+//        isEmpty();
+//        isBlank();
+//        isNumeric();
+//        isNumericSpace();
+
+        join();
+    }
+
+    private static void join() {
+        String name = "ni   hao";
+        if (!StringUtils.isBlank(name)) {
+            //name = name.replaceAll("\\s",",");
+            String[] s = name.split(" ");
+            String collect = Arrays.stream(s).filter(a -> !StringUtils.isBlank(a)).collect(Collectors.joining("|"));
+            System.out.println("collect = " + collect);
+            System.out.println(Arrays.toString(s));
+            if (s.length == 1) {
+                name = s[0].trim();
+            } else {
+                name = StringUtils.join(s, "|");
+            }
+        }
+        System.out.println(name);
     }
 
     //return str == null || str.length() == 0;
