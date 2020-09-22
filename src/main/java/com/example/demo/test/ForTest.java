@@ -1,4 +1,4 @@
-package com.example.demo.牛客;
+package com.example.demo.test;
 
 public class ForTest {
     public static void main(String[] args) {
