@@ -10,6 +10,8 @@ import java.util.ArrayList;
 public class aaa {
 
     public static void main(String[] args) {
+        System.out.println(0/Math.random());
+        System.out.println(Math.round(-1.5));
 
     }
 
