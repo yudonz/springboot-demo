@@ -12,9 +12,9 @@ import java.util.stream.Collectors;
  * @description：
  */
 public class Main三表 {
-    private static final String inputPath1 = "D:/project/申报(2).xls";
+    private static final String inputPath1 = "D:/project/申报 (3).xls";
     //private static final String inputPath1 = "C:\\Users\\57380\\Desktop\\申报 (14).xls";
-    private static final String inputPath2 = "D:/project/新农直报0916.xlsx";
+    private static final String inputPath2 = "D:/project/新农直报0925(1).xlsx";
     //private static final String inputPath2 = "C:\\Users\\57380\\Desktop\\新农直报0828.xlsx";
     private static final String outputPath = "C:\\Users\\Administrator\\Desktop\\有差异的.xlsx";
     private static final String outputPath1 = "C:\\Users\\Administrator\\Desktop\\产地市场独有.xlsx";
