@@ -28,12 +28,13 @@ import java.util.List;
 @Slf4j
 @RestController
 @Api(description = "easyExcel测试")
-public class EasyController {
+public class EasyOldController {
     @Autowired
     private ResourceMapper resourceMapper;
     @Autowired
     private AdmRightTemplateMapper admRightTemplateMapper;
 
+    @ApiOperation(value = "数据库读取excel")
     @GetMapping("/readExcel")
     public void fun() {
         List<Resource> all = resourceMapper.findAll();
@@ -42,6 +43,7 @@ public class EasyController {
         EasyExcel.read(fileName, ExcelData.class, new ExcelDataListener(all)).sheet(2).doRead();
     }
 
+    @ApiOperation(value = "写入到本地")
     @GetMapping("/export1")
     public void export() {
         List<Resource> all = resourceMapper.findAll();
