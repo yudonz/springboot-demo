@@ -1,15 +1,16 @@
 spring:
-  profiles:
-    active: 139
+#  profiles:
+#    active: 139
 
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver#    url: jdbc:mysql://127.0.0.1:3306/mydb?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=Asia/Shanghai&useSSL=false
-#    username: root
-#    password: 123456
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/mydb?characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull&allowMultiQueries=true&serverTimezone=Asia/Shanghai&useSSL=false
+    username: root
+    password: 123456
 
 
 server:
-  port: 8080  # sa
+  port: 8080
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
