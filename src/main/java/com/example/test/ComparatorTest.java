@@ -28,7 +28,9 @@ public class ComparatorTest {
         Collections.sort(list, Comparator.comparingInt(People::getId));
 
         list.stream().forEach(System.out::println);
+
         //list.stream().sorted(Comparator.comparing(p->p.getId())).forEach(System.out::println);
+        //list.stream().sorted(Comparator.comparingInt(People::getId)).forEach(System.out::println);
 
         list.stream().min(new Comparator<People>() {
             @Override
